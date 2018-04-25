@@ -25,7 +25,8 @@ const EXPRESS_SESSION_CREDS = {
 
 const REDIRECTION = {
   successRedirect: CHALLENGES_ROUTE,
-  failureRedirect: LOGIN_ROUTE
+  failureRedirect: LOGIN_ROUTE,
+  failureFlash: true
 };
 
 var mongoose          = require(MONGOOSE);
