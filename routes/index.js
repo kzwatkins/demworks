@@ -22,16 +22,26 @@ router.get("/signup", function(req, res){
   res.render("signup");
 });
 
-router.post("/signup", function(req, res){
-  var user = new User({username:req.body.username, role: "0"}); // Assume regular user.
-  User.register(user, req.body.password, function(err, user){
+router.post("/signup", middleware.authenticate("local"), function(req, res){
+  var username = req.body.username;
+  var password = req.body.password;
+
+  User.register({username:username, role: "0", active: false}, password, function(err, foundUser){
     if(err){
       req.flash("error", err.message);
       return res.redirect("/signup");
     }
 
-    req.flash("success", user.username + " has successfully registered.");
-    res.redirect("/challenge");
+    var authenticate = User.authenticate();
+    authenticate(username, password, function(err, result) {
+      if (err) {
+        req.flash("error", err.message);
+        return res.redirect("/login");
+      }
+
+      req.flash(foundUser.username + " has successfully registered: " + result);
+      res.redirect("/challenge");
+    });
   });
 });
 
