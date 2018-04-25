@@ -1,0 +1,50 @@
+/* body{
+  background: #fafafa;
+} */
+
+.landing-header{
+  font-family: 'Jua', sans-serif;
+}
+
+.landing-button{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.main-body{
+  margin-top: 20px;
+}
+
+.new-form{
+  width:40%;
+}
+
+.no-display{
+  display: none;
+}
+
+.question-card{
+  /* width: 30%; */
+  /* display: inline; */
+  /* margin: 0.1rem; */
+}
+
+.font-red{
+  color: red;
+}
+
+.delete-form{
+  display: inline;
+}
+
+.justification{
+  text-align: justify;
+}
+.answer{
+  color: green;
+  background: green;
+}
+
+.incorrect{
+  color: red;
+  background: red;
+}

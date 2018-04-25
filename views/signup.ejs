@@ -1,0 +1,27 @@
+<% include partials/header %>
+
+    <h1 class="text-center">Sign Up</h1>
+
+    <div class="new-form mx-auto">
+        <form action="/signup" method="post">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="email" class="form-control" name="user[username]" id="username" aria-describedby="usernameHelp" placeholder="Username" required>
+              <small id="usernameHelp" class="form-text text-muted">Enter your email address.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="user[password]" id="password" aria-describedby="passwordHelp" placeholder="Password" required>
+              <small id="passwordHelp" class="form-text text-muted">Enter a new password that should not match passwords for other sites.</small>
+            </div>
+
+            <div class="text-center">
+            <input type="submit" class="btn btn-primary btn-block" value="Submit">
+            <input type="reset" class="btn btn-primary btn-block" value="Reset">
+          </div>
+        </form>
+        <a href="/questions" class="text-center">Go Back</a>
+    </div>
+
+<% include partials/footer %>

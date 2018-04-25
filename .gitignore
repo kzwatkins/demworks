@@ -1,0 +1,9 @@
+node_modules/
+public/css/jquery*
+public/css/bootstrap*
+public/css/animate*
+public/js/jquery*
+public/js/fontawesome*
+public/js/bootstrap*
+public/js/popper*
+

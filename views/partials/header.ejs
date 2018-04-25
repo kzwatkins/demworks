@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Democracy Works! Challenge</title>
+    <link rel="stylesheet" href="/static/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <!-- <link rel="stylesheet" href="/static/css/fa-svg-with-js.css"> -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/demworks.css">
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+
+  <a class="navbar-brand" href="#"><i class="fas fa-paper-plane"></i> DemWorks!</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+      </li>
+      <% if(currentUser && currentUser.username) { %>
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/questions"><i class="fas fa-question-circle"></i> View All FCSB Materials</a>
+      </li>
+    </ul>
+    <% } %>
+    <ul class="navbar-nav ml-auto">
+      <% if(!(currentUser && currentUser.username)) { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <% } else { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</div>
+
+</nav>
+
+<div class="container main-body">
+
+<% if(success && success.length > 0){ %>
+  <div class="alert alert-success fadeOut" role="alert">
+  <%= success %>
+</div>
+<% } %>
+
+<% if(error && error.length > 0){ %>
+  <div class="alert alert-danger fadeOut" role="alert">
+    <%= error %>
+  </div>
+<% } %>
